@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>CLOSURE</title>
+</head>
+<body>
+    <h2>Q1.</h2>
+    <pre>
+        function counter(){
+            var counter = 0;
+        
+            function IncreaseCounter() {
+                return counter += 1;
+            };
+        
+            return IncreaseCounter;
+        }
+        
+        var counter = counter();
+        alert(counter());
+        alert(counter());
+        alert(counter());
+        alert(counter());"
+    </pre>
+    <h3>
+        <pre>
+            Ans:  1 
+                  2
+                  3 
+                  4
+        </pre>
+</h3>
+    <h3>in this function it browser showing an alert 1,after closes then it will showing 2 because counter will increases on evry time we will call again it will closes similarly it will shows 3,and 4   </h3>
+
+
+
+    <h2>Q2.</h2>
+    <pre>
+        let count = 0;
+        (function () {
+          if (count === 0) {
+            let count = 1;
+            console.log(count); // What is logged?
+          }
+          console.log(count); // What is logged?
+        })();
+    </pre>
+    <h3>Ans:
+        <pre>  
+            1 
+             0
+        </pre>
+        
+    <h3> the function is functional scope thats why it will print 1 and 0 </h3>
+</h3>
+
+    <h2>Q3.</h2>
+    <pre>
+        for (var i = 0; i < 3; i++) {
+            setTimeout(function log() {
+              console.log(i); // What is logged?
+            }, 1000);
+          }        
+    </pre>
+    <h3><pre>Ans: 
+             3
+             3
+             3
+            </pre> </h3>
+    <h4>the answer is 3 3 3 loop complete the exicution Settimeout which will print outuout the  after 1 sec delay.</h4>
+
+    <h3>Q4. <br> <span  class="take">Write a code to calculate area of a rectangle using inner function. In this case outer function should accept parameter length and inner function should accept parameter breadth.</span></h3>
+    <h3>Ans: Area: 120 </h3>
+    <pre>
+        function length(L){
+            function breadth(B){
+                console.log(`Area:${L*B}`)        
+            }
+            breadth(10);
+        }
+        length(12);
+    </pre>
+
+    <h3>Q5.
+        
+        <pre>
+            Take a variable in outer function and create an inner function to increase the counter every time it is called
+        </pre>  
+        </h3>
+    <h3>Ans: 11</h3>
+    <pre>
+        function outer(){
+            var i=10;
+            function inner(){
+                i +=1;
+                console.log(i);
+            }
+            inner();
+        }
+       outer();
+    </pre>
+
+    <h2>Q6.</h2>
+    <pre>
+        var a = 12;
+        (function () {
+        alert(a);
+        })();
+    </pre>
+    <h3>Ans: 12 </h3>
+    <h4>variable decleared the outside of the function</h4>
+
+    <h2>Q7.</h2>
+    <pre>
+        var a = 10;
+        var x = (function () {
+          var a = 12;
+          return function () {
+            alert(a);
+          };
+        })();
+        x();
+    </pre>
+    <h3>Ans: 12 </h3>
+    <h4> we are calling the function inside of return function it wil take the value in frist function </h4>
+    
+    <h2>Q8.</h2>
+    <pre>
+        "var globalVar = ""xyz"";
+
+        (function outerFunc(outerArg) {
+            var outerVar = 'a';
+            
+            (function innerFunc(innerArg) {
+            var innerVar = 'b';
+            
+            console.log(
+                ""outerArg = "" + outerArg + ""\n"" +
+                ""innerArg = "" + innerArg + ""\n"" +
+                ""outerVar = "" + outerVar + ""\n"" +
+                ""innerVar = "" + innerVar + ""\n"" +
+                ""globalVar = "" + globalVar);
+            
+            })(456);
+        })(123);"
+    </pre>
+        <h3>Ans: Error because Syntax ")" missing  after argument list</h3>
+
+
+
+
+</body>
+<script src="./index.js"></script>
+</html>

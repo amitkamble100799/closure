@@ -1,0 +1,29 @@
+body{
+    background-color: black;
+}
+h2
+{
+    color: rgb(85, 87, 197);
+}
+h3
+{
+    color:white;
+    font-size : 20px;
+}
+pre
+{
+    font-size: 17px;
+    color:blue;
+    font-weight: bold;
+}
+h4
+{
+    color:beige;
+    font-size : 20px;
+}
+.question
+{
+    
+    color: red;
+    font-size: 20px;
+}
